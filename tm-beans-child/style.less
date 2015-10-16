@@ -1,0 +1,156 @@
+/*
+ * In this file, you may style your site using CSS or LESS as well as overwrite UIkit LESS variables.
+ * Make sure to enable development mode via the Admin->Settings->Beans option while working on your website. LESS will then be processed on the fly.
+ */
+
+
+//VARIABLES                  
+
+@base-heading-color : #baa8da;
+@hero-bg-color : darken(@base-heading-color, 40%);
+@global-link-color : #8d8b51;                            
+@global-link-hover-color : darken(@global-link-color, 20%);
+@button-primary-color : #fff;
+@button-primary-background : @hero-bg-color;
+@button-primary-hover-background : @base-heading-color;
+@button-primary-active-background : @base-heading-color;
+@global-border : lighten(@base-heading-color, 15%);
+@radius : @global-border-radius;
+
+/****************************************/
+/*  SITEWIDE ELEMENTS                   */
+/***************************************/
+
+/* Buttons */
+.uk-button-primary {
+	background-color: @button-primary-background;
+	color: @button-primary-color !important;
+}
+
+.uk-button-primary:hover,
+.uk-button-primary:focus {
+	background-color: @button-primary-hover-background;
+}
+
+/* Figure */
+figure {
+	max-width: 100%;
+	height: auto;
+}
+
+/****************************************/
+/*  MAIN CONTENT                     */
+/***************************************/
+
+/* Content */
+.tm-main {
+    background-color: lighten(@base-heading-color, 15%);
+}
+
+/****************************************/
+/*  HEADER SECTION                     */
+/***************************************/
+.tm-site-branding span {
+	font-size: .8em;
+	font-style: italic;
+}
+
+.tm-primary-menu .uk-button {
+	background-color: @button-primary-background;
+	color: @button-primary-color;
+}
+
+.tm-primary-menu .uk-button:hover,
+.tm-primary-menu .uk-button:focus {
+	background-color: @button-primary-hover-background;
+	color: @button-primary-color;
+}
+
+.uk-navbar-nav {
+	text-transform: uppercase;
+}
+
+/****************************************/
+/*  HOME SPECIFIC STYLES                */
+/***************************************/
+
+/* Hero section */
+.bc-block {
+	background-color: @hero-bg-color;
+	color: lighten(@base-heading-color, 60%);
+	
+	.uk-article-lead {
+		color: #fff;
+		text-transform: uppercase;
+	}
+	
+	.uk-button {
+		margin-bottom: 20px;
+	}
+}
+
+/* Posts */
+.home .uk-article-title,
+.blog .uk-article-title {
+	text-align: center;
+	font-size: 1.5em;
+	text-transform: uppercase;
+}
+
+.home .tm-article-content,
+.home .post-header,
+.blog .tm-article-content,
+.blog .post-header {
+	padding: 1em;
+}
+
+.home .tm-article-content,
+.blog .tm-article-content {
+	display: none;
+}
+
+.home .sticky,
+.blog .sticky {
+	border: 2px solid darken(@global-border, 20%);
+	border-radius: @radius;
+	padding-bottom: 4em;
+	
+	.uk-article-title:after {
+		content:"\f08d";
+		font-family: FontAwesome;
+		display: inline-block;
+		margin-left: .2em;
+		white-space: nowrap;
+		color: darken(@global-border, 20%);
+	}
+}
+
+.home .uk-article:not(.sticky),
+.blog .uk-article:not(.sticky) {
+	background-color: transparent;
+	
+	.post-header, 
+	.post-body {
+		background-color: #fff;
+		border-bottom-right-radius: @radius;
+		border-bottom-left-radius: @radius;
+	}
+	
+	.post-header{
+		border-radius: @radius;
+	}
+	
+	.post-body {
+		border-bottom-right-radius: @radius;
+		border-bottom-left-radius: @radius;
+	}
+	
+	.post-tags {
+		display: block;
+		padding: 0 1em 2em;
+	}
+	
+	.tm-article-content {
+		padding-bottom: 1em;
+	}
+}
