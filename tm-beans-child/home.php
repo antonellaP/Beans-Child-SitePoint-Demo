@@ -1,6 +1,8 @@
 <?php
 //Make page fullwidth as default layout in home page
-beans_add_smart_action( 'beans_default_layout', 'beans_child_default_home_layout' );
+//Make page fullwidth as default layout in home page
+add_filter( 'beans_layout', 'beans_child_default_home_layout' );
+
 function beans_child_default_home_layout() {
 	return 'c';
 }
